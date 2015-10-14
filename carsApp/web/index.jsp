@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Oct 13, 2015, 2:13:37 PM
-    Author     : thewagdy
+    Author     : Ahmad Wagdy
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
