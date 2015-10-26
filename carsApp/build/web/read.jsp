@@ -16,5 +16,8 @@
     <body>
         <h1>Cars Database</h1>
         <%= table %>
+        <br><br>
+        <a href ="add">Add a new Car</a>
+        
     </body>
 </html>
