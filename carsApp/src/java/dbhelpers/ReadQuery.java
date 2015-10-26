@@ -94,6 +94,12 @@ public class ReadQuery {
                 table += car.getCARCOLOR();
                 table += "</td>";
                 
+                table += "<td>";
+                table += "<a href=delete?CARID=" + car.getCARID() + "> Delete </a>";
+                table += "</td>";
+                
+                
+                
                 table += "</tr>";
                 
             }
