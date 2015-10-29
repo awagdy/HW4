@@ -61,7 +61,27 @@ public class ReadQuery {
 
     public String getHTMLtable() {
         String table = "";
-        table += "<table border=2>";
+        table += "<table>";
+        table += "<tr class=\"toprow\" >";
+        table += "<th>";
+        table += "Car ID";
+        table += "</th>";
+        table += "<th>";
+        table += "Car Model";
+        table += "</th>";
+        table += "<th>";
+        table += "Car Make";
+        table += "</th>";
+        table += "<th>";
+        table += "Car Year";
+        table += "</th>";
+        table += "<th>";
+        table += "Car Color";
+        table += "</th>";
+        table += "<th>";
+        table += "Delete a Car from Database";
+        table += "</th>";
+        table += "</tr>";
 
         try {
             while (this.results.next()) {
@@ -71,37 +91,35 @@ public class ReadQuery {
                 car.setCARMODEL(this.results.getString("CARMODEL"));
                 car.setCARYEAR(this.results.getInt("CARYEAR"));
                 car.setCARCOLOR(this.results.getString("CARCOLOR"));
-                
-                table += "<tr>";
-                
+
+                table += "<tr class=\"rows\">";
+
                 table += "<td>";
                 table += car.getCARID();
                 table += "</td>";
-                
+
                 table += "<td>";
                 table += car.getCARMAKE();
                 table += "</td>";
-                
+
                 table += "<td>";
                 table += car.getCARMODEL();
                 table += "</td>";
-                
+
                 table += "<td>";
                 table += car.getCARYEAR();
                 table += "</td>";
-                
+
                 table += "<td>";
                 table += car.getCARCOLOR();
                 table += "</td>";
-                
+
                 table += "<td>";
                 table += "<a href=delete?CARID=" + car.getCARID() + "> Delete </a>";
                 table += "</td>";
-                
-                
-                
+
                 table += "</tr>";
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
