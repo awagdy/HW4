@@ -70,7 +70,7 @@ public class ReadRecord {
     
         try {
             //set up a string to hold our query
-            String query ="SELECT * FROM Cars WHERE CARID = ?";
+            String query ="SELECT * FROM CARS WHERE CARID = ?";
             
             //create a preparedstatement using our query string
             

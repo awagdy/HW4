@@ -19,6 +19,8 @@
         <%= table %>
         <br><br>
         <a href ="add">Add a new Car</a>
+        <br> <br>
+        <a href="search.jsp">Search Cars</a>
         
     </body>
 </html>

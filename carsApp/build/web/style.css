@@ -14,8 +14,11 @@ body{
 table{
     border: 3px solid white;
     background-color: white;
-
 }
+input[readonly] {
+    background-color: gray; 
+}
+
 td{
     border: 1px solid white;
 }

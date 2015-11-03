@@ -15,7 +15,7 @@
         
         <p>
             <label>Car ID</label>
-            <input type="text" name="Make" value="<%= car.getCARID() %>"/>
+            <input readonly type="text" name="ID" value="<%= car.getCARID() %>" />
             <br>
         </p>
     

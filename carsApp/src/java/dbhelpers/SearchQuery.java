@@ -1,3 +1,4 @@
+
 package dbhelpers;
 
 import java.io.IOException;
@@ -12,24 +13,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Cars;
 
-public class ReadQuery {
 
+public class SearchQuery {
+    
     private Connection conn;
     private ResultSet results;
-
-    public ReadQuery() {
-
+    
+    public SearchQuery(){
         Properties props = new Properties();
         InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         String driver = props.getProperty("driver.name");
@@ -39,26 +40,26 @@ public class ReadQuery {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn = DriverManager.getConnection(url, username, pass);
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public void doRead() {
+    
+    public void doSearch(String CARMAKE){
         try {
-            String query = "SELECT * FROM CARS ORDER BY CARID ASC ";
+            String query = "SELECT * FROM CARS WHERE UPPER(CARMAKE) LIKE ? ORDER BY CARID ASC";
             PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1,"%"+CARMAKE.toUpperCase()+"%");
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
     public String getHTMLtable() {
         String table = "";
         table += "<table>";
@@ -67,10 +68,10 @@ public class ReadQuery {
         table += "Car ID";
         table += "</th>";
         table += "<th>";
-        table += "Car Make";
+        table += "Car Model";
         table += "</th>";
         table += "<th>";
-        table += "Car Model";
+        table += "Car Make";
         table += "</th>";
         table += "<th>";
         table += "Car Year";
@@ -122,7 +123,7 @@ public class ReadQuery {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         table += "</table>";
