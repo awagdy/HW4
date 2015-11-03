@@ -79,7 +79,7 @@ public class ReadQuery {
         table += "Car Color";
         table += "</th>";
         table += "<th>";
-        table += "Delete a Car from Database";
+        table += "Update or Delete a Car from Database";
         table += "</th>";
         table += "</tr>";
 
@@ -115,7 +115,7 @@ public class ReadQuery {
                 table += "</td>";
 
                 table += "<td>";
-                table += "<a href=delete?CARID=" + car.getCARID() + "> Delete </a>";
+                table +="<a href=update?CARID=" + car.getCARID() + "> Update </a>"+ "<a href=delete?CARID=" + car.getCARID() + "> Delete </a>";
                 table += "</td>";
 
                 table += "</tr>";
