@@ -13,9 +13,23 @@
         <title>Car Database</title>
     </head>
     <body>
-        <h1>Car Database</h1>
+        <div class="wrap">
+        <div class="header"> 
+            <h1>Car Database</h1>
+        </div>
+            <div class="main">
+                
         <a href="read">View All Cars</a>
         <br> <br>
         <a href="search.jsp">Search Cars</a>
+            </div>
+            <div class="footer">
+           
+            </div>
+            
+        
+        
+        </div>
     </body>
+
 </html>

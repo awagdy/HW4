@@ -11,6 +11,11 @@ and open the template in the editor.
 body{
     background-color: #D2B48C;
 }
+.wrap{text-align: center; width:90%; margin:0 auto; border:8px solid black; margin-top: 25px;}
+.header{background-color: tan; text-align: left; padding: 25px;}
+.main{background-color: #D2B48C; text-align: left; padding: 25px;}
+.footer{background-color: tan; text-align: left; padding: 25px; }
+
 table{
     border: 3px solid white;
     background-color: white;
