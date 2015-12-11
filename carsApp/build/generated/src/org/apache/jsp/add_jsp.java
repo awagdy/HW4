@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,36 +41,46 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
       out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"./style.css\" /> \n");
       out.write("\n");
       out.write("\n");
-      out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html\" charset=UTF-8\">\n");
-      out.write("        <title>Car Database</title>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Add a new Car</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <div class=\"wrap\">\n");
-      out.write("        <div class=\"header\"\n");
-      out.write("        </div>\n");
-      out.write("            <div class=\"main\">\n");
-      out.write("                \n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"footer\">\n");
-      out.write("                \n");
-      out.write("                test\n");
-      out.write("            </div>\n");
-      out.write("            \n");
-      out.write("        \n");
-      out.write("        <h1>Car Database</h1>\n");
-      out.write("        <a href=\"read\">View All Cars</a>\n");
-      out.write("        <br> <br>\n");
-      out.write("        <a href=\"search.jsp\">Search Cars</a>\n");
-      out.write("        </div>\n");
-      out.write("    </body>\n");
+      out.write("        <h1>Add a new Car</h1>\n");
       out.write("\n");
+      out.write("        <form name=\"addForm\" action=\"addCar\" method=\"get\"/>\n");
+      out.write("        <p>\n");
+      out.write("            <label>Car Make</label>\n");
+      out.write("            <input type=\"text\" name=\"Make\" value=\"\"/>\n");
+      out.write("            <br>\n");
+      out.write("        </p>\n");
+      out.write("        <p>\n");
+      out.write("\n");
+      out.write("            <label>Car Model</label>\n");
+      out.write("            <input type=\"text\" name=\"Model\" value=\"\"/>\n");
+      out.write("            <br>\n");
+      out.write("        </p>\n");
+      out.write("        <p>\n");
+      out.write("            <label>Car Year</label>\n");
+      out.write("            <input type=\"text\" name=\"Year\" value=\"\"/>\n");
+      out.write("            <br>\n");
+      out.write("        </p>\n");
+      out.write("        <p>\n");
+      out.write("            <label>Car Color</label>\n");
+      out.write("            <input type=\"text\" name=\"Color\" value=\"\"/>\n");
+      out.write("            <br>\n");
+      out.write("        </p>\n");
+      out.write("        <p>\n");
+      out.write("\n");
+      out.write("            <input type=\"submit\"  name=\"submit\" value=\"Submit\"/>\n");
+      out.write("        </p>\n");
+      out.write("    </form>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

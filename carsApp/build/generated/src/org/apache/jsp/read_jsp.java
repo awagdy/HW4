@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class search_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class read_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -42,30 +42,29 @@ public final class search_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"./style.css\" /> \n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"./style.css\" /> \n");
       out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Search Cars</title>\n");
+      out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
+      out.write("    ");
+ String table = (String) request.getAttribute("table"); 
+      out.write("\n");
+      out.write("    \n");
       out.write("    <body>\n");
-      out.write("        <h1>Search Cars</h1>\n");
+      out.write("        <h1>Cars Database</h1>\n");
+      out.write("        ");
+      out.print( table );
+      out.write("\n");
+      out.write("        <br><br>\n");
+      out.write("        <a href =\"add\">Add a new Car</a>\n");
+      out.write("        <br> <br>\n");
+      out.write("        <a href=\"search.jsp\">Search Cars</a>\n");
       out.write("        \n");
-      out.write("        <form name=\"searchForm\" action=\"search\" method=\"get\">\n");
-      out.write("            \n");
-      out.write("            <input type=\"text\" name=\"searchVal\" value=\"\"/>\n");
-      out.write("            \n");
-      out.write("            <br>\n");
-      out.write("            \n");
-      out.write("            <input type=\"submit\" name=\"submit\" value=\"Search\"/>\n");
-      out.write("            \n");
-      out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
